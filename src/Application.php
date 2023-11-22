@@ -13,12 +13,12 @@ use Doctrine\ORM\EntityManager;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 
-class Application
+readonly class Application
 {
     public function __construct(
         private RequestBodyFactory $requestBodyFactory,
         private EntityManager $entityManager,
-        private ApiBoxSizeCalculator $packagingFinder,
+        private PackagingFinder $packagingFinder,
     ) {
         //
     }
