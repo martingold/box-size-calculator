@@ -54,12 +54,6 @@ readonly final class ApiBoxSizeCalculator implements BoxSizeCalculator
 
         $baseUrl = $_ENV['API_BASE_URL'];
         try {
-            var_dump(json_encode([
-                'bins' => $bins,
-                'items' => $items,
-                'username' => $_ENV['API_USERNAME'],
-                'api_key' => $_ENV['API_KEY'],
-            ]));exit;
             $response = $this->client->post($baseUrl . '/packer/findBinSize', [
                 'http_errors' => true,
                 'json' => [
